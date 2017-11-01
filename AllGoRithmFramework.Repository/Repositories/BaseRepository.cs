@@ -1,5 +1,6 @@
 ﻿using AllGoRithmFramework.Domain.Entities;
 using AllGoRithmFramework.Repository.Contexts;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,26 +8,28 @@ namespace AllGoRithmFramework.Repository.Repositories
 {
     public class BaseRepository<T> where T : BaseEntity
     {
-        private readonly BaseContext<T> baseContext;
+        protected readonly BaseContext<T> baseContext;
+        protected DbSet<T> dbSet;
 
         public BaseRepository(BaseContext<T> baseContext)
         {
             this.baseContext = baseContext;
+            this.dbSet = baseContext.DbSet;
         }
 
         public T GetById(int id)
         {
-            return this.baseContext.DbSet.Find(id);
+            return this.dbSet.Find(id);
         }
 
         public IList<T> GetAll()
         {
-            return this.baseContext.DbSet.ToList();
+            return this.dbSet.ToList();
         }
 
         public void Delete(T entity)
         {
-            this.baseContext.DbSet.Remove(entity);
+            this.dbSet.Remove(entity);
 
             this.baseContext.SaveChanges();
         }
@@ -38,7 +41,7 @@ namespace AllGoRithmFramework.Repository.Repositories
 
         public void Insert(T entity)
         {
-            this.baseContext.DbSet.Add(entity);
+            this.dbSet.Add(entity);
 
             this.baseContext.SaveChanges();
         }
@@ -47,6 +50,5 @@ namespace AllGoRithmFramework.Repository.Repositories
         {
             this.baseContext.SaveChanges();
         }
-
     }
 }

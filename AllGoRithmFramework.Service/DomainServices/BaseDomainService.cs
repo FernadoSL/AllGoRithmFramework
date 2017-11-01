@@ -7,7 +7,7 @@ namespace AllGoRithmFramework.Service.DomainServices
 {
     public class BaseDomainService<T> where T : BaseEntity
     {
-        public BaseRepository<T> Repository { get; set; }
+        protected BaseRepository<T> Repository { get; set; }
 
         public BaseDomainService(BaseContext<T> dbContext)
         {
