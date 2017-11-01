@@ -9,4 +9,8 @@
     <ProjectReference Include="..\AllGoRithmFramework.Repository\AllGoRithmFramework.Repository.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <Version>1.0.1-alpha</Version>
+  </PropertyGroup>
+
 </Project>

@@ -13,4 +13,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <Version>1.0.1-alpha</Version>
+  </PropertyGroup>
+  
 </Project>
