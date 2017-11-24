@@ -10,6 +10,10 @@
 
         public string Password { get; private set; }
 
+        private User()
+        {
+        }
+        
         public User(string userName, string email, string password)
         {
             this.UserName = userName;

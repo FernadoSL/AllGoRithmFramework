@@ -19,6 +19,10 @@ namespace AllGoRithmFramework.Domain.Entities
 
         public EmailState EmailState { get; private set; }
 
+        private Email()
+        {
+        }
+
         public Email(string recipient, string subject, string message)
         {
             this.Recipient = recipient;
