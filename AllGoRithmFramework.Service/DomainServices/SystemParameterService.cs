@@ -1,5 +1,4 @@
 ﻿using AllGoRithmFramework.Domain.Entities;
-using AllGoRithmFramework.Domain.Enums;
 using AllGoRithmFramework.Repository.Contexts;
 using AllGoRithmFramework.Repository.Repositories;
 using System;
@@ -12,7 +11,7 @@ namespace AllGoRithmFramework.Service.DomainServices
 
         public SystemParameterService(BaseContext<SystemParameter> dbContext) : base(dbContext)
         {
-            this.Repository = new SystemParameterRepository(dbContext);
+            this.SystemParameterRepository = new SystemParameterRepository(dbContext);
         }
 
         public SystemParameter GetByName(string name)
