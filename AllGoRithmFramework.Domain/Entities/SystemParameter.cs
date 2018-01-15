@@ -11,5 +11,14 @@ namespace AllGoRithmFramework.Domain.Entities
         public string Value { get; private set; }
 
         public ParameterDataType DataType { get; private set; }
+
+        private SystemParameter() { }
+
+        public SystemParameter(string name, string value, int dataType)
+        {
+            this.Name = name;
+            this.Value = value;
+            this.DataType = (ParameterDataType)dataType;
+        }
     }
 }
