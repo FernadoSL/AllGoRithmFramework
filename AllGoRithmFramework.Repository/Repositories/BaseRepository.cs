@@ -48,6 +48,8 @@ namespace AllGoRithmFramework.Repository.Repositories
 
         public void Update(T enitity)
         {
+            this.dbSet.Update(enitity);
+
             this.baseContext.SaveChanges();
         }
     }

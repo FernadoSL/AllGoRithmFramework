@@ -7,7 +7,7 @@ namespace AllGoRithmFramework.Service.Factories
     {
         public SystemParameter Create(SystemParameterDto source)
         {
-            return new SystemParameter(source.Name, source.Value, source.DataType);
+            return new SystemParameter(source.SystemParameterId, source.Name, source.Value, source.DataType);
         }
     }
 }
